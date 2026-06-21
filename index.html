@@ -1,1 +1,351 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LA REINE DU MAL - Règne des Ténèbres">
+    <meta name="author" content="La Reine du Mal">
+    <meta name="theme-color" content="#8b0000">
+    <title>⛧ LA REINE DU MAL ☠</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+        
+        :root { 
+            --blood-red: #8b0000; 
+            --dark-red: #4a0000; 
+            --crimson: #dc143c; 
+            --bg-dark: #0a0a0a; 
+            --card-bg: #111111;
+            --gold: #d4af37;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background-color: #000;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(139, 0, 0, 0.2) 0%, transparent 60%),
+                radial-gradient(circle at 20% 80%, rgba(220, 20, 60, 0.1) 0%, transparent 50%);
+            color: #cc0000; 
+            font-family: 'Courier New', monospace; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            min-height: 100vh; 
+            padding: 20px;
+        }
 
+        .container {
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* ========== COURONNE ========== */
+        .crown {
+            font-size: 3rem;
+            animation: float 3s ease-in-out infinite;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* ========== CARTE PRINCIPALE ========== */
+        .card {
+            background: linear-gradient(180deg, #111 0%, #000 100%);
+            border: 2px solid var(--blood-red);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 
+                0 0 40px rgba(139, 0, 0, 0.5),
+                0 0 80px rgba(139, 0, 0, 0.2),
+                inset 0 0 40px rgba(139, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            z-index: -1;
+        }
+        
+        .card::after {
+            content: '☠';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: var(--blood-red);
+        }
+
+        /* ========== TITRE ========== */
+        .title {
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 2.5rem;
+            color: var(--crimson);
+            text-shadow: 
+                0 0 10px rgba(220, 20, 60, 0.8),
+                0 0 30px rgba(139, 0, 0, 0.6),
+                0 0 60px rgba(139, 0, 0, 0.4);
+            letter-spacing: 3px;
+            margin-bottom: 5px;
+        }
+        
+        .subtitle {
+            color: var(--gold);
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+            margin-bottom: 20px;
+        }
+
+        /* ========== IMAGE ========== */
+        .queen-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--blood-red);
+            box-shadow: 
+                0 0 30px rgba(139, 0, 0, 0.7),
+                0 0 60px rgba(139, 0, 0, 0.4);
+            margin: 15px auto;
+        }
+
+        /* ========== CITATION ========== */
+        .quote {
+            color: #660000;
+            font-style: italic;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin: 20px 0;
+            padding: 15px;
+            border-left: 3px solid var(--blood-red);
+            border-right: 3px solid var(--blood-red);
+            text-shadow: 0 0 5px rgba(139, 0, 0, 0.5);
+        }
+        
+        .quote span {
+            color: var(--crimson);
+            font-weight: bold;
+        }
+
+        /* ========== BOUTONS ========== */
+        .buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .btn {
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            font-size: 0.8rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-red {
+            background: transparent;
+            border: 2px solid var(--blood-red);
+            color: var(--crimson);
+        }
+        
+        .btn-red:hover {
+            background: var(--blood-red);
+            color: #fff;
+            box-shadow: 0 0 20px rgba(139, 0, 0, 0.6);
+            transform: translateY(-2px);
+        }
+        
+        .btn-gold {
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+        }
+        
+        .btn-gold:hover {
+            background: var(--gold);
+            color: #000;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+            transform: translateY(-2px);
+        }
+
+        /* ========== SOCIAL ========== */
+        .social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .social a {
+            color: #660000;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        
+        .social a:hover {
+            color: var(--crimson);
+            text-shadow: 0 0 10px rgba(220, 20, 60, 0.8);
+            transform: scale(1.2);
+        }
+
+        /* ========== COMPTEUR ========== */
+        .counter {
+            color: #330000;
+            font-size: 0.7rem;
+            margin-top: 15px;
+            letter-spacing: 1px;
+        }
+        
+        .counter span {
+            color: var(--crimson);
+            font-weight: bold;
+        }
+
+        /* ========== PARTICULES ========== */
+        .particles {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .particle {
+            position: absolute;
+            color: var(--blood-red);
+            opacity: 0.3;
+            animation: fall linear infinite;
+        }
+        
+        @keyframes fall {
+            0% { transform: translateY(-100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.5; }
+            90% { opacity: 0.5; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 480px) {
+            .title { font-size: 1.8rem; }
+            .card { padding: 20px; }
+            .btn { padding: 10px 18px; font-size: 0.7rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particules -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Contenu principal -->
+    <div class="container">
+        <div class="crown">👑</div>
+        
+        <div class="card">
+            <h1 class="title">La Reine du Mal</h1>
+            <p class="subtitle">⛧ RÈGNE DES TÉNÈBRES ⛧</p>
+            
+            <!-- Photo -->
+            <img src="vivi.jpg" alt="La Reine du Mal" class="queen-img" 
+                 onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22><rect fill=%22%23111%22 width=%22120%22 height=%22120%22 rx=%2260%22/><text fill=%22%238b0000%22 x=%2260%22 y=%2265%22 text-anchor=%22middle%22 font-size=%2240%22>☠</text></svg>'">
+            
+            <!-- Citation -->
+            <div class="quote">
+                "<span>Je suis la Reine</span> qui règne dans l'ombre,<br>
+                Celle dont le nom fait <span>trembler</span> les âmes.<br>
+                Dans les ténèbres, <span>je commande</span>,<br>
+                Dans le silence, <span>je triomphe</span>."
+            </div>
+            
+            <!-- Boutons -->
+            <div class="buttons">
+                <button class="btn btn-red" onclick="showMessage('dark')">
+                    ⛧ MON ROYAUME
+                </button>
+                <button class="btn btn-gold" onclick="showMessage('gold')">
+                    👑 MA COURONNE
+                </button>
+                <button class="btn btn-red" onclick="showMessage('power')">
+                    ☠ MON POUVOIR
+                </button>
+            </div>
+            
+            <!-- Réseaux sociaux -->
+            <div class="social">
+                <a href="#" title="Instagram">📷</a>
+                <a href="#" title="WhatsApp">📱</a>
+                <a href="#" title="Email">📧</a>
+                <a href="#" title="GitHub">💀</a>
+            </div>
+            
+            <!-- Compteur -->
+            <div class="counter">
+                ⛧ <span id="visitor-count">666</span> âmes soumises ⛧
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // ========== MESSAGES ==========
+        const messages = {
+            dark: "🩸 Bienvenue dans mon royaume des ténèbres...\n\nJe suis la Reine du Mal,\nMaître absolue de l'ombre.",
+            gold: "👑 Ma couronne est forgée dans le feu,\nMes joyaux sont les âmes que j'ai conquises.\n\nÀ genoux devant la Reine.",
+            power: "☠ Mon pouvoir est infini,\nMa volonté est absolue.\n\nRien ne peut m'arrêter."
+        };
+        
+        function showMessage(type) {
+            alert(messages[type]);
+        }
+        
+        // ========== COMPTEUR DE VISITES ==========
+        let count = localStorage.getItem('queen-visitors') || 665;
+        count = parseInt(count) + 1;
+        localStorage.setItem('queen-visitors', count);
+        document.getElementById('visitor-count').textContent = count;
+        
+        // ========== PARTICULES ==========
+        function createParticle() {
+            const particles = document.getElementById('particles');
+            const particle = document.createElement('span');
+            particle.className = 'particle';
+            particle.textContent = ['⛧', '☠', '🩸', '👑', '💀', '🖤'][Math.floor(Math.random() * 6)];
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            particle.style.animationDuration = (Math.random() * 5 + 3) + 's';
+            particle.style.animationDelay = Math.random() * 5 + 's';
+            particles.appendChild(particle);
+            
+            setTimeout(() => particle.remove(), 8000);
+        }
+        
+        setInterval(createParticle, 300);
+        for(let i = 0; i < 10; i++) setTimeout(createParticle, i * 300);
+        
+        // ========== LOG ==========
+        console.log(`
+        ⛧ 👑 ⛧
+        LA REINE DU MAL
+        "Règne des Ténèbres"
+        ⛧ 👑 ⛧
+        `);
+    </script>
+</body>
+</html>
