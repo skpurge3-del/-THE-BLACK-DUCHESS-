@@ -1,507 +1,430 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      ༺𓂀 THE BLACK DUCHESS 黑暗 🛡️
-    </title>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
-      
-      :root { 
-        --blood-red: #8b0000; 
-        --dark-red: #4a0000; 
-        --crimson: #dc143c; 
-        --bg-dark: #0a0a0a; 
-        --card-bg: #111111; 
-        --text-red: #cc0000;
-        --border-red: #5a0000;
-      }
-      
-      * { box-sizing: border-box; }
-      
-      body { 
-        background-color: var(--bg-dark); 
-        background-image: 
-          radial-gradient(circle at 50% 0%, rgba(139, 0, 0, 0.15) 0%, transparent 60%),
-          radial-gradient(circle at 20% 80%, rgba(220, 20, 60, 0.08) 0%, transparent 50%),
-          radial-gradient(circle at 80% 80%, rgba(139, 0, 0, 0.1) 0%, transparent 50%);
-        color: #cc0000; 
-        font-family: 'Courier New', Courier, monospace; 
-        display: flex; 
-        flex-direction: column; 
-        align-items: center; 
-        min-height: 100vh; 
-        margin: 0; 
-        padding: 15px; 
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover" />
+  <title>༺𓂀 THE BLACK DUCHESS 黑暗 🛡️</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+    
+    :root {
+      --bape-pink: #e84a7f;
+      --bape-pink-glow: #ff69b4;
+      --bape-dark: #0b0b0b;
+      --bape-card: #111111;
+      --bape-border: #2a2a2a;
+      --bape-text: #f0c0d0;
+      --bape-muted: #9e7a8a;
+      --bape-camo: #1c1c1c;
+    }
 
-      /* Écran de Verrouillage */
-      #lock-screen { 
-        position: fixed; 
-        inset: 0; 
-        background: #000000;
-        background-image: 
-          radial-gradient(circle at center, rgba(139, 0, 0, 0.2) 0%, transparent 70%),
-          repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(139, 0, 0, 0.03) 2px, rgba(139, 0, 0, 0.03) 4px);
-        display: flex; 
-        align-items: center; 
-        justify-content: center; 
-        z-index: 10000; 
-      }
-      
-      .lock-box { 
-        background: linear-gradient(180deg, #111111 0%, #0a0a0a 100%); 
-        padding: 30px; 
-        border-radius: 15px; 
-        border: 2px solid var(--blood-red); 
-        text-align: center; 
-        box-shadow: 
-          0 0 30px rgba(139, 0, 0, 0.5),
-          inset 0 0 30px rgba(139, 0, 0, 0.1); 
-        max-width: 380px; 
-        width: 90%;
-        position: relative;
-      }
-      
-      .lock-box::before {
-        content: '';
-        position: absolute;
-        top: -1px;
-        left: -1px;
-        right: -1px;
-        bottom: -1px;
-        border-radius: 15px;
-        border: 1px solid rgba(220, 20, 60, 0.3);
-        z-index: -1;
-      }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-      /* Interface Principale */
-      #main-content { 
-        display: none; 
-        width: 100%; 
-        max-width: 420px; 
-      }
-      
-      .header { 
-        text-align: center; 
-        margin-bottom: 15px; 
-        padding: 20px 15px;
-        background: linear-gradient(180deg, #111111 0%, #0a0a0a 100%);
-        border: 1px solid var(--border-red);
-        border-radius: 15px;
-        box-shadow: 
-          0 5px 20px rgba(0, 0, 0, 0.5),
-          inset 0 1px 0 rgba(139, 0, 0, 0.3);
-        position: relative;
-      }
-      
-      .header::after {
-        content: '☠';
-        position: absolute;
-        bottom: -15px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 24px;
-        color: var(--blood-red);
-        text-shadow: 0 0 10px rgba(139, 0, 0, 0.8);
-      }
-      
-      .header h1 { 
-        color: var(--crimson); 
-        font-size: 1.6rem; 
-        margin: 0; 
-        text-shadow: 
-          0 0 10px rgba(220, 20, 60, 0.8),
-          0 0 30px rgba(139, 0, 0, 0.6),
-          2px 2px 4px #000000; 
-        letter-spacing: 3px;
-        font-family: 'UnifrakturMaguntia', 'Courier New', cursive;
-      }
-      
-      .subtitle {
-        color: #660000; 
-        font-size: 0.7rem; 
-        letter-spacing: 2px;
-        margin-top: 5px;
-        text-shadow: 0 0 5px rgba(139, 0, 0, 0.5);
-      }
+    body {
+      background-color: #050505;
+      font-family: 'Inter', 'Courier New', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 16px;
+      position: relative;
+      background-image: radial-gradient(circle at 30% 40%, rgba(232, 74, 127, 0.12) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(255, 105, 180, 0.08) 0%, transparent 50%);
+    }
 
-      /* Zone d'affichage du texte */
-      .display-area { 
-        background: #000000; 
-        border: 1px solid var(--border-red); 
-        border-radius: 12px; 
-        padding: 15px; 
-        margin-bottom: 20px; 
-        box-shadow: 
-          inset 0 0 20px rgba(139, 0, 0, 0.2),
-          0 0 10px rgba(0, 0, 0, 0.5); 
-      }
-      
-      .display-area p {
-        color: #660000;
-        font-size: 0.7rem;
-        margin: 0 0 5px;
-        letter-spacing: 1px;
-      }
-      
-      textarea { 
-        width: 100%; 
-        height: 130px; 
-        background: transparent; 
-        border: none; 
-        color: #ff3333; 
-        font-size: 0.85rem; 
-        resize: none; 
-        outline: none; 
-        text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
-      }
+    /* Image en fond full screen */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('vivi.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: 0;
+      opacity: 0.25;
+      filter: grayscale(40%) brightness(0.7) contrast(1.1);
+      pointer-events: none;
+    }
 
-      /* Grille des Supports */
-      .support-grid { 
-        display: flex; 
-        flex-direction: column; 
-        gap: 12px; 
-      }
-      
-      .ban-card { 
-        background: linear-gradient(135deg, #111111 0%, #0a0a0a 100%); 
-        border: 1px solid var(--border-red); 
-        border-radius: 15px; 
-        padding: 15px; 
-        text-align: center; 
-        transition: 0.3s;
-        position: relative;
-        overflow: hidden;
-      }
-      
-      .ban-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(139, 0, 0, 0.1), transparent);
-        transition: 0.5s;
-      }
-      
-      .ban-card:hover { 
-        border-color: var(--crimson);
-        box-shadow: 
-          0 0 20px rgba(139, 0, 0, 0.4),
-          inset 0 0 20px rgba(139, 0, 0, 0.1);
-        transform: translateY(-2px);
-      }
-      
-      .ban-card:hover::before {
-        left: 100%;
-      }
-      
-      .ban-card h3 { 
-        margin: 0 0 10px; 
-        font-size: 1rem; 
-        letter-spacing: 2px;
-        text-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
-      }
+    /* Écran de verrouillage */
+    #lock-screen {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      background-image: radial-gradient(circle at center, rgba(232, 74, 127, 0.2) 0%, transparent 80%);
+    }
 
-      /* Boutons */
-      .btn-gen { 
-        width: 100%; 
-        padding: 10px; 
-        background: transparent; 
-        border: 1px solid var(--blood-red); 
-        color: var(--crimson); 
-        border-radius: 25px; 
-        cursor: pointer; 
-        font-weight: bold; 
-        font-family: 'Courier New', monospace;
-        letter-spacing: 1px;
-        transition: 0.3s;
-        text-shadow: 0 0 5px rgba(220, 20, 60, 0.5);
-      }
-      
-      .btn-gen:hover { 
-        background: linear-gradient(90deg, var(--dark-red), var(--blood-red)); 
-        color: #ffffff;
-        box-shadow: 
-          0 0 15px rgba(139, 0, 0, 0.6),
-          inset 0 0 10px rgba(0, 0, 0, 0.3);
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-      }
-      
-      .red-btn { 
-        border-color: #660000; 
-        color: #ff3333; 
-      }
-      
-      .red-btn:hover { 
-        background: linear-gradient(90deg, #660000, #cc0000); 
-        color: #ffffff;
-        box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
-      }
+    .lock-box {
+      background: rgba(15, 15, 15, 0.9);
+      backdrop-filter: blur(16px);
+      padding: 32px 24px;
+      border-radius: 32px;
+      border: 1.5px solid var(--bape-border);
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.8), 0 0 30px rgba(232,74,127,0.25);
+      max-width: 380px;
+      width: 90%;
+      position: relative;
+      z-index: 10;
+    }
 
-      .send-group { 
-        display: flex; 
-        gap: 10px; 
-        margin-top: 20px; 
-      }
-      
-      .btn-final { 
-        flex: 1; 
-        padding: 15px; 
-        border: none; 
-        border-radius: 50px; 
-        font-weight: bold; 
-        cursor: pointer; 
-        font-size: 0.9rem; 
-        transition: 0.3s;
-        font-family: 'Courier New', monospace;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-      }
-      
-      .btn-wa { 
-        background: linear-gradient(135deg, #4a0000, #8b0000); 
-        color: #ffcccc; 
-        border: 2px solid #8b0000;
-        box-shadow: 
-          0 5px 15px rgba(139, 0, 0, 0.4),
-          inset 0 1px 0 rgba(255, 255, 255, 0.1);
-        text-shadow: 0 0 5px rgba(255, 200, 200, 0.5);
-      }
-      
-      .btn-wa:hover {
-        background: linear-gradient(135deg, #660000, #cc0000);
-        box-shadow: 
-          0 5px 25px rgba(255, 0, 0, 0.5),
-          inset 0 1px 0 rgba(255, 255, 255, 0.2);
-        transform: translateY(-2px);
-      }
-      
-      .btn-gm { 
-        background: linear-gradient(135deg, #1a0000, #4a0000); 
-        color: #ff9999; 
-        border: 2px solid #660000;
-        box-shadow: 
-          0 5px 15px rgba(139, 0, 0, 0.3),
-          inset 0 1px 0 rgba(255, 255, 255, 0.05);
-        text-shadow: 0 0 5px rgba(255, 150, 150, 0.5);
-      }
-      
-      .btn-gm:hover {
-        background: linear-gradient(135deg, #330000, #8b0000);
-        box-shadow: 
-          0 5px 25px rgba(255, 0, 0, 0.4),
-          inset 0 1px 0 rgba(255, 255, 255, 0.15);
-        transform: translateY(-2px);
-      }
+    .lock-box h2 {
+      color: #f5a3c7;
+      font-family: 'UnifrakturMaguntia', 'Courier New', cursive;
+      letter-spacing: 2px;
+      font-size: 1.8rem;
+      text-shadow: 0 0 12px #e84a7f, 0 0 25px #c0406e, 0 0 35px #ff69b4;
+      margin-bottom: 20px;
+      word-break: keep-all;
+      line-height: 1.3;
+    }
 
-      input[type="password"] { 
-        width: 90%; 
-        padding: 12px; 
-        margin: 15px 0; 
-        background: #000000; 
-        border: 1px solid var(--blood-red); 
-        color: #ff3333; 
-        border-radius: 5px; 
-        text-align: center; 
-        font-family: 'Courier New', monospace;
-        letter-spacing: 2px;
-        box-shadow: inset 0 0 10px rgba(139, 0, 0, 0.2);
-      }
-      
-      input[type="password"]:focus {
-        outline: none;
-        border-color: var(--crimson);
-        box-shadow: 
-          inset 0 0 15px rgba(139, 0, 0, 0.3),
-          0 0 10px rgba(220, 20, 60, 0.3);
-      }
-      
-      input[type="password"]::placeholder {
-        color: #660000;
-        letter-spacing: 1px;
-      }
-      
-      /* Style pour l'image */
-      .lock-photo {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin: 15px auto;
-        border: 3px solid var(--blood-red);
-        box-shadow: 
-          0 0 20px rgba(139, 0, 0, 0.6),
-          0 0 40px rgba(139, 0, 0, 0.3);
-        display: block;
-      }
-      
-      .header-photo {
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin: 10px auto;
-        border: 2px solid var(--crimson);
-        box-shadow: 
-          0 0 15px rgba(220, 20, 60, 0.5),
-          0 0 30px rgba(139, 0, 0, 0.3);
-        display: block;
-      }
-      
-      /* Scrollbar gothique */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      
-      ::-webkit-scrollbar-track {
-        background: #000000;
-      }
-      
-      ::-webkit-scrollbar-thumb {
-        background: var(--blood-red);
-        border-radius: 4px;
-      }
-      
-      ::-webkit-scrollbar-thumb:hover {
-        background: var(--crimson);
-      }
-      
-      /* Animation de chargement */
-      @keyframes pulse {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0.5; }
-      }
-      
-      .pulse {
-        animation: pulse 2s infinite;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="lock-screen">
-      <div class="lock-box">
-        <h2 style="color: var(--crimson); text-shadow: 0 0 15px rgba(220, 20, 60, 0.6); letter-spacing: 2px; font-size: 1.3rem;">
-          ༺𓂀 THE BLACK DUCHESS 黑暗
-        </h2>
-        
-        <!-- Photo vivi.jpg sur l'écran de verrouillage -->
-        <img src="vivi.jpg" alt="Vivi" class="lock-photo" id="lock-photo" onerror="this.style.display='none'" />
-        
-        <!-- Champ mot de passe -->
-        <input type="password" id="pass" placeholder="ENTREZ LE NOM DU MAITRE" />
-        
-        <button class="btn-gen" onclick="unlock()">
-          ⚰ DÉVERROUILLER ⚰
-        </button>
+    .lock-photo {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 10px auto;
+      border: 2px solid #e84a7f;
+      box-shadow: 0 0 25px rgba(232,74,127,0.7);
+      display: block;
+      background: #1a1a1a;
+    }
+
+    input[type="password"] {
+      width: 100%;
+      padding: 14px;
+      margin: 18px 0 12px;
+      background: #0d0d0d;
+      border: 1.5px solid #3a2a33;
+      color: #f8b0cc;
+      border-radius: 40px;
+      text-align: center;
+      font-family: 'Courier New', monospace;
+      letter-spacing: 2px;
+      outline: none;
+      background: #111;
+      transition: all 0.25s;
+    }
+
+    input[type="password"]:focus {
+      border-color: #e84a7f;
+      box-shadow: 0 0 18px #e84a7f66;
+    }
+
+    input::placeholder {
+      color: #6e5562;
+      letter-spacing: 1.5px;
+    }
+
+    .btn-gen {
+      width: 100%;
+      padding: 12px 20px;
+      background: transparent;
+      border: 1.5px solid #e84a7f;
+      color: #f5a3c7;
+      border-radius: 40px;
+      cursor: pointer;
+      font-weight: bold;
+      font-family: 'Courier New', monospace;
+      letter-spacing: 2px;
+      transition: 0.3s;
+      text-transform: uppercase;
+      backdrop-filter: blur(4px);
+      background: rgba(232,74,127,0.05);
+      margin-top: 8px;
+      font-size: 0.9rem;
+    }
+
+    .btn-gen:hover {
+      background: #e84a7f;
+      color: #0a0a0a;
+      box-shadow: 0 0 30px #e84a7f;
+      border-color: #ff99c2;
+      font-weight: bold;
+    }
+
+    /* Interface principale */
+    #main-content {
+      display: none;
+      width: 100%;
+      max-width: 440px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 18px;
+      padding: 20px 12px 14px;
+      background: rgba(12, 12, 12, 0.8);
+      backdrop-filter: blur(14px);
+      border: 1px solid #2e2e2e;
+      border-radius: 36px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.7), 0 0 18px rgba(232,74,127,0.3);
+    }
+
+    .header h1 {
+      color: #f5a3c7;
+      font-size: 1.7rem;
+      margin: 0;
+      text-shadow: 0 0 15px #e84a7f, 2px 2px 0 #000, 0 0 30px #ff69b4;
+      letter-spacing: 2px;
+      font-family: 'UnifrakturMaguntia', 'Courier New', cursive;
+      word-break: keep-all;
+      line-height: 1.3;
+    }
+
+    .subtitle {
+      color: #c78da0;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      margin-top: 6px;
+      text-transform: uppercase;
+    }
+
+    .header-photo {
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 12px auto 4px;
+      border: 2px solid #e84a7f;
+      box-shadow: 0 0 18px #e84a7f;
+      display: block;
+      background: #1e1e1e;
+    }
+
+    .display-area {
+      background: rgba(8, 8, 8, 0.85);
+      backdrop-filter: blur(14px);
+      border: 1px solid #3a2e35;
+      border-radius: 24px;
+      padding: 16px;
+      margin-bottom: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.7), inset 0 0 15px rgba(232,74,127,0.2);
+    }
+
+    .display-area p {
+      color: #c78da0;
+      font-size: 0.7rem;
+      letter-spacing: 1.5px;
+      margin-bottom: 6px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 130px;
+      background: transparent;
+      border: none;
+      color: #ffb6d1;
+      font-size: 0.8rem;
+      resize: none;
+      outline: none;
+      font-family: 'Courier New', monospace;
+      text-shadow: 0 0 5px #e84a7f;
+    }
+
+    .support-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .ban-card {
+      background: rgba(14, 14, 14, 0.8);
+      backdrop-filter: blur(12px);
+      border: 1px solid #342b30;
+      border-radius: 24px;
+      padding: 14px 14px 12px;
+      text-align: center;
+      transition: 0.25s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+    }
+
+    .ban-card:hover {
+      border-color: #e84a7f;
+      box-shadow: 0 0 22px #e84a7f55, inset 0 0 12px rgba(232,74,127,0.2);
+      transform: translateY(-2px);
+    }
+
+    .ban-card h3 {
+      margin: 0 0 10px;
+      font-size: 0.95rem;
+      letter-spacing: 2px;
+      color: #f5a3c7;
+      text-shadow: 0 0 8px #c0406e;
+    }
+
+    .btn-gen.red-btn {
+      border-color: #ff85b3;
+      color: #ffb3cc;
+    }
+
+    .send-group {
+      display: flex;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .btn-final {
+      flex: 1;
+      padding: 14px 10px;
+      border: none;
+      border-radius: 50px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 0.8rem;
+      transition: 0.3s;
+      font-family: 'Courier New', monospace;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      backdrop-filter: blur(10px);
+      background: rgba(20, 20, 20, 0.7);
+      border: 1.5px solid #e84a7f;
+      color: #f5a3c7;
+    }
+
+    .btn-wa {
+      background: rgba(232,74,127,0.15);
+      box-shadow: 0 0 12px rgba(232,74,127,0.4);
+    }
+
+    .btn-gm {
+      background: rgba(20, 20, 20, 0.8);
+      border-color: #c0406e;
+      color: #f5c0d8;
+    }
+
+    .btn-final:hover {
+      background: #e84a7f;
+      color: #0a0a0a;
+      border-color: #ffb6d1;
+      box-shadow: 0 0 28px #e84a7f;
+      font-weight: bold;
+    }
+
+    /* scrollbar rose/noir */
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0b0b0b;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #e84a7f;
+      border-radius: 10px;
+    }
+
+    @keyframes softPulse {
+      0% { opacity: 0.9; }
+      50% { opacity: 0.6; }
+      100% { opacity: 0.9; }
+    }
+    .pulse {
+      animation: softPulse 2.2s infinite;
+    }
+  </style>
+</head>
+<body>
+  <div id="lock-screen">
+    <div class="lock-box">
+      <h2>༺𓂀 THE BLACK DUCHESS 黑暗</h2>
+      <!-- Photo en fond + miniature visible -->
+      <img src="vivi.jpg" alt="Vivi" class="lock-photo" id="lock-photo" onerror="this.style.display='none'" />
+      <input type="password" id="pass" placeholder="ENTREZ LE NOM DU MAITRE" />
+      <button class="btn-gen" onclick="unlock()">⚰ DÉVERROUILLER ⚰</button>
+    </div>
+  </div>
+
+  <div id="main-content">
+    <div class="header">
+      <h1>༺𓂀 THE BLACK DUCHESS 黑暗 ⭐</h1>
+      <p class="subtitle">☠ SYSTÈME DE SUPPRESSION RADICALE ☠</p>
+      <img src="vivi.jpg" alt="Vivi" class="header-photo" id="header-photo" onerror="this.style.display='none'" />
+    </div>
+
+    <div class="display-area">
+      <p>🩸 TEXTE GÉNÉRÉ :</p>
+      <textarea id="output" readonly placeholder="Le texte de suppression apparaîtra ici..."></textarea>
+    </div>
+
+    <div class="support-grid">
+      <div class="ban-card">
+        <h3>⛧ BAN vivi 🚫 (SÉCURITÉ)</h3>
+        <button class="btn-gen" onclick="gen(1)">🗡 Générer Ban 1</button>
+      </div>
+      <div class="ban-card">
+        <h3>⛧ BAN Blood ❌ (VIOLENCE)</h3>
+        <button class="btn-gen red-btn" onclick="gen(2)">☠ Générer Ban 2</button>
+      </div>
+      <div class="ban-card">
+        <h3>⛧ BAN fucking ⚠️ (HARCÈLEMENT)</h3>
+        <button class="btn-gen" onclick="gen(3)">⚔ Générer Ban 3</button>
+      </div>
+      <div class="ban-card">
+        <h3>⛧ BAN Valwulence 💀 (CRITIQUE)</h3>
+        <button class="btn-gen red-btn" onclick="gen(4)">🕯 Générer Ban 4</button>
       </div>
     </div>
-    
-    <div id="main-content">
-      <div class="header">
-        <h1>
-          ༺𓂀 THE BLACK DUCHESS 黑暗 ⭐
-        </h1>
-        <p class="subtitle">
-          ☠ SYSTEME DE SUPPRESSION RADICALE ☠
-        </p>
-        <!-- Photo vivi.jpg dans l'interface principale -->
-        <img src="vivi.jpg" alt="Vivi" class="header-photo" id="header-photo" onerror="this.style.display='none'" />
-      </div>
-      
-      <div class="display-area">
-        <p>🩸 TEXTE GÉNÉRÉ :</p>
-        <textarea id="output" readonly="" placeholder="Le texte de suppression apparaîtra ici..."></textarea>
-      </div>
-      
-      <div class="support-grid">
-        <div class="ban-card">
-          <h3 style="color: var(--crimson);">
-            ⛧ BAN ALPHA 🚫 (SÉCURITÉ)
-          </h3>
-          <button class="btn-gen" onclick="gen(1)">
-            🗡 Générer Ban 1
-          </button>
-        </div>
-        
-        <div class="ban-card">
-          <h3 style="color: #ff3333;">
-            ⛧ BAN BETA ❌ (VIOLENCE)
-          </h3>
-          <button class="btn-gen red-btn" onclick="gen(2)">
-            ☠ Générer Ban 2
-          </button>
-        </div>
-        
-        <div class="ban-card">
-          <h3 style="color: var(--crimson);">
-            ⛧ BAN GAMMA ⚠️ (HARCÈLEMENT)
-          </h3>
-          <button class="btn-gen" onclick="gen(3)">
-            ⚔ Générer Ban 3
-          </button>
-        </div>
-        
-        <div class="ban-card">
-          <h3 style="color: #ff3333;">
-            ⛧ BAN DELTA 💀 (CRITIQUE)
-          </h3>
-          <button class="btn-gen red-btn" onclick="gen(4)">
-            🕯 Générer Ban 4
-          </button>
-        </div>
-      </div>
-      
-      <div class="send-group">
-        <button class="btn-final btn-wa" onclick="send('wa')">
-          ⛧ WHATSAPP
-        </button>
-        <button class="btn-final btn-gm" onclick="send('gm')">
-          ☠ GMAIL
-        </button>
-      </div>
+
+    <div class="send-group">
+      <button class="btn-final btn-wa" onclick="send('wa')">⛧ WHATSAPP</button>
+      <button class="btn-final btn-gm" onclick="send('gm')">☠ GMAIL</button>
     </div>
-    
-    <script>
-      const MASTER = "vivi"; // Le mot de passe
+  </div>
 
-        function unlock() {
-            if(document.getElementById('pass').value.toLowerCase() === MASTER) {
-                document.getElementById('lock-screen').style.display = 'none';
-                document.getElementById('main-content').style.display = 'block';
-            } else { 
-                alert("⛧ ACCÈS REFUSÉ ⛧"); 
-            }
-        }
+  <script>
+    const MASTER = "vivi";
 
-        const reports = {
-            1: "🚨 DENUNCIA URGENTE: El número [N] está violando gravemente los términos de seguridad de la plataforma. Solicito suspensión inmediata.",
-            2: "⚠️ REPORT DE VIOLENCE CRITIQUE: L'utilisateur [N] propage du contenu interdit et dangereux. Intervention urgente requise pour bannissement.",
-            3: "🛑 HARASSMENT ALERT: Account [N] is involved in systematic cyber-bullying. This is a direct violation of community standards. Terminate now.",
-            4: "🆘 EMERGENCY SECURITY BREACH: [N] is bypassing safety protocols. This account poses a risk to all users. Permanent ban requested."
-        };
+    function unlock() {
+      if (document.getElementById('pass').value.toLowerCase() === MASTER) {
+        document.getElementById('lock-screen').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+      } else {
+        alert("⛧ ACCÈS REFUSÉ ⛧");
+      }
+    }
 
-        function gen(id) {
-            let cible = prompt("🩸 Numéro de la cible :");
-            if(cible) {
-                document.getElementById('output').value = reports[id].replace("[N]", cible);
-            }
-        }
+    const reports = {
+      1: "🚨 DENUNCIA URGENTE: El número [N] está violando gravemente los términos de seguridad de la plataforma. Solicito suspensión inmediata.",
+      2: "⚠️ REPORT DE VIOLENCE CRITIQUE: L'utilisateur [N] propage du contenu interdit et dangereux. Intervention urgente requise pour bannissement.",
+      3: "🛑 HARASSMENT ALERT: Account [N] is involved in systematic cyber-bullying. This is a direct violation of community standards. Terminate now.",
+      4: "🆘 EMERGENCY SECURITY BREACH: [N] is bypassing safety protocols. This account poses a risk to all users. Permanent ban requested."
+    };
 
-        function send(type) {
-            const txt = document.getElementById('output').value;
-            if(!txt) return alert("⛧ Générez d'abord un texte !");
-            
-            if(type === 'wa') {
-                window.location.href = "https://wa.me/16505361212?text=" + encodeURIComponent(txt);
-            } else {
-                window.location.href = `mailto:support@whatsapp.com?subject=URGENT REPORT&body=${encodeURIComponent(txt)}`;
-            }
-        }
-    </script>
-  </body>
+    function gen(id) {
+      let cible = prompt("🩸 Numéro de la cible :");
+      if (cible) {
+        document.getElementById('output').value = reports[id].replace("[N]", cible);
+      }
+    }
+
+    function send(type) {
+      const txt = document.getElementById('output').value;
+      if (!txt) return alert("⛧ Générez d'abord un texte !");
+      if (type === 'wa') {
+        window.location.href = "https://wa.me/16505361212?text=" + encodeURIComponent(txt);
+      } else {
+        window.location.href = `mailto:support@whatsapp.com?subject=URGENT REPORT&body=${encodeURIComponent(txt)}`;
+      }
+    }
+  </script>
+</body>
 </html>
