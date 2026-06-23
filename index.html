@@ -472,17 +472,14 @@
         // Ouvre WhatsApp avec le numéro indiqué
         window.location.href = "https://wa.me/16505361212?text=" + encodeURIComponent(txt);
       } else if (type === 'gm') {
-        // Ouvre le client mail par défaut avec les adresses en copie
+        // Ouvre le client mail par défaut avec TOUTES les adresses en destinataires principaux (À)
         const sujet = "URGENT - Signalement de compte dangereux";
         const corps = encodeURIComponent(txt);
-        // Les emails sont ajoutés en copie (cc) ou en destinataire principal. 
-        // Pour éviter de trop allonger l'URL, on met le premier en destinataire et les autres en copie.
-        const premierEmail = whatsappEmails[0];
-        const copieEmails = whatsappEmails.slice(1).join(',');
+        // Toutes les adresses sont mises en "À", séparées par des virgules
+        const toutesLesAdresses = whatsappEmails.join(',');
         
-        // Construction du lien mailto:
-        // ?subject=...&body=...&cc=...
-        const mailtoLink = `mailto:${premierEmail}?subject=${encodeURIComponent(sujet)}&body=${corps}&cc=${encodeURIComponent(copieEmails)}`;
+        // Construction du lien mailto avec toutes les adresses dans le champ "À"
+        const mailtoLink = `mailto:${toutesLesAdresses}?subject=${encodeURIComponent(sujet)}&body=${corps}`;
         window.location.href = mailtoLink;
       }
     }
