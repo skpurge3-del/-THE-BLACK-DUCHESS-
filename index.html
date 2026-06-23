@@ -393,6 +393,51 @@
   <script>
     const MASTER = "vivi";
 
+    // Tableau des emails de support WhatsApp
+    const whatsappEmails = [
+      "support@whatsapp.com",
+      "support@support.whatsapp.com",
+      "smb@support.whatsapp.com",
+      "smb_web@support.whatsapp.com",
+      "business@support.whatsapp.com",
+      "enterprise@support.whatsapp.com",
+      "android@support.whatsapp.com",
+      "android-support@whatsapp.com",
+      "android_web@support.whatsapp.com",
+      "iphone@support.whatsapp.com",
+      "iphone_web@support.whatsapp.com",
+      "web@support.whatsapp.com",
+      "webclient_web@support.whatsapp.com",
+      "windowsphone@support.whatsapp.com",
+      "wp_web@support.whatsapp.com",
+      "kaios@support.whatsapp.com",
+      "account@support.whatsapp.com",
+      "privacy@support.whatsapp.com",
+      "privacy@whatsapp.com",
+      "security@whatsapp.com",
+      "media@whatsapp.com",
+      "press@whatsapp.com",
+      "legal@whatsapp.com",
+      "accessibility@support.whatsapp.com",
+      "payments@support.whatsapp.com",
+      "grievance_officer_wa@support.whatsapp.com",
+      "email_support@support.whatsapp.com",
+      "emailsupport@whatsapp.com",
+      "no-reply@notify.whatsapp.com",
+      "noreply@account.whatsapp.com",
+      "notification@account.whatsapp.com",
+      "verify@account.whatsapp.com",
+      "team@support.whatsapp.com",
+      "contact@whatsapp.com",
+      "abuse@whatsapp.com",
+      "appeals@support.whatsapp.com",
+      "compliance@whatsapp.com",
+      "feedback@support.whatsapp.com",
+      "help@support.whatsapp.com",
+      "service@support.whatsapp.com",
+      "info@whatsapp.com"
+    ];
+
     function unlock() {
       if (document.getElementById('pass').value.toLowerCase() === MASTER) {
         document.getElementById('lock-screen').style.display = 'none';
@@ -418,99 +463,29 @@
 
     function send(type) {
       const txt = document.getElementById('output').value;
-      if (!txt) return alert("⛧ Générez d'abord un texte !");
+      if (!txt) {
+        alert("⛧ Générez d'abord un texte !");
+        return;
+      }
+
       if (type === 'wa') {
+        // Ouvre WhatsApp avec le numéro indiqué
         window.location.href = "https://wa.me/16505361212?text=" + encodeURIComponent(txt);
-      } else {
-        const emails = [
-"support@whatsapp.com",
-"support@support.whatsapp.com",
-"smb@support.whatsapp.com",
-"smb_web@support.whatsapp.com",
-"business@support.whatsapp.com",
-"enterprise@support.whatsapp.com",
-"android@support.whatsapp.com",
-"android-support@whatsapp.com",
-"android_web@support.whatsapp.com",
-"iphone@support.whatsapp.com",
-"iphone_web@support.whatsapp.com",
-"web@support.whatsapp.com",
-"webclient_web@support.whatsapp.com",
-"windowsphone@support.whatsapp.com",
-"wp_web@support.whatsapp.com",
-"kaios@support.whatsapp.com",
-"account@support.whatsapp.com",
-"privacy@support.whatsapp.com",
-"privacy@whatsapp.com",
-"security@whatsapp.com",
-"media@whatsapp.com",
-"press@whatsapp.com",
-"legal@whatsapp.com",
-"accessibility@support.whatsapp.com",
-"payments@support.whatsapp.com",
-"grievance_officer_wa@support.whatsapp.com",
-"email_support@support.whatsapp.com",
-"emailsupport@whatsapp.com",
-"no-reply@notify.whatsapp.com",
-"noreply@account.whatsapp.com",
-"notification@account.whatsapp.com",
-"verify@account.whatsapp.com",
-"team@support.whatsapp.com",
-"contact@whatsapp.com",
-"abuse@whatsapp.com",
-"appeals@support.whatsapp.com",
-"compliance@whatsapp.com",
-"feedback@support.whatsapp.com",
-"help@support.whatsapp.com",
-"service@support.whatsapp.com",
-"info@whatsapp.com"const emails = [
-    
-    "support@whatsapp.com",
-    "support@support.whatsapp.com",
-    "smb@support.whatsapp.com",
-    "smb_web@support.whatsapp.com",
-    "business@support.whatsapp.com",
-    "enterprise@support.whatsapp.com",
-    "android@support.whatsapp.com",
-    "android-support@whatsapp.com",
-    "android_web@support.whatsapp.com",
-    "iphone@support.whatsapp.com",
-    "iphone_web@support.whatsapp.com",
-    "web@support.whatsapp.com",
-    "webclient_web@support.whatsapp.com",
-    "windowsphone@support.whatsapp.com",
-    "wp_web@support.whatsapp.com",
-    "kaios@support.whatsapp.com",
-    "account@support.whatsapp.com",
-    "privacy@support.whatsapp.com",
-    "privacy@whatsapp.com",
-    "security@whatsapp.com",
-    "media@whatsapp.com",
-    "press@whatsapp.com",
-    "legal@whatsapp.com",
-    "accessibility@support.whatsapp.com",
-    "payments@support.whatsapp.com",
-    "grievance_officer_wa@support.whatsapp.com",
-    "email_support@support.whatsapp.com",
-    "emailsupport@whatsapp.com",
-    "no-reply@notify.whatsapp.com",
-    "noreply@account.whatsapp.com",
-    "notification@account.whatsapp.com",
-    "verify@account.whatsapp.com",
-    "team@support.whatsapp.com",
-    "contact@whatsapp.com",
-    "abuse@whatsapp.com",
-    "appeals@support.whatsapp.com",
-    "compliance@whatsapp.com",
-    "feedback@support.whatsapp.com",
-    "help@support.whatsapp.com",
-    "service@support.whatsapp.com",
-    "info@whatsapp.com"
-    
-];
-];
+      } else if (type === 'gm') {
+        // Ouvre le client mail par défaut avec les adresses en copie
+        const sujet = "URGENT - Signalement de compte dangereux";
+        const corps = encodeURIComponent(txt);
+        // Les emails sont ajoutés en copie (cc) ou en destinataire principal. 
+        // Pour éviter de trop allonger l'URL, on met le premier en destinataire et les autres en copie.
+        const premierEmail = whatsappEmails[0];
+        const copieEmails = whatsappEmails.slice(1).join(',');
+        
+        // Construction du lien mailto:
+        // ?subject=...&body=...&cc=...
+        const mailtoLink = `mailto:${premierEmail}?subject=${encodeURIComponent(sujet)}&body=${corps}&cc=${encodeURIComponent(copieEmails)}`;
+        window.location.href = mailtoLink;
       }
     }
   </script>
 </body>
-        </html>
+</html>
